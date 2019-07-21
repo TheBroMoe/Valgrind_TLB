@@ -1,12 +1,4 @@
-CMPUT 379: Assignment 3 Design Document
-
-Mohammad Kebbi; kebbi; 1496572 Zachary Kist; zkist; 1508381
-
-Your submission must include the DESIGN.md (plain text or markdown format) document addressing how you addressed the
-implementation requirements in a space and time efficient way and what kinds of tools (and how) you used them togenerate
-the performance result plots.
-
-A description of source files:
+# A description of source files:
 
     * run.sh: Runs valtb379 once taking any and all desired input. This is meant to be used as a single-use case for executing valtb379
     
@@ -26,7 +18,7 @@ A description of source files:
         - The valtb379 executable
 
 
-Design Explanation:
+# Design Explanation:
 
 * Data Structure for TLB:
 For our implementation of simulating the TLB, we used a linked list tostore the page number in a node link structure with a size equivalent to the given tlbsize. We parsed the valgrind data from stdin.With every address taken from the pipe, we would search the Linked List to see if the page number already exists, and if it does not, we increment the number of misses, otherwise if we have a hit, we increment the number of hits, and after every memory reference we increment the total number of memory references. For a TLB miss, We always append a new node to the end of the list. This made it straightforward to evict nodes when required regardless of eviction policy. The TLB hits and misses are with respect to page references, hence a memory access spanning over two pages results in two page references and hence two TLB operations.
