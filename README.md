@@ -1,6 +1,4 @@
-CMPUT 379: A
-**IMPORTANT NOTE:
-The scripts were created in a specific way to execute all code within the 'a3' directory and not
+* NOTE: The scripts were created in a specific way to execute all code within the 'a3' directory and not
 within the src directory
 
 # How to run program: 
